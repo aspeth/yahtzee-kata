@@ -3,12 +3,6 @@ class YahtzeeScoring
     best_category = nil
     best_score = 0
 
-    score = score_upper_section(roll)
-    if score[:score] > best_score
-      best_score = score[:score]
-      best_category = score[:category]
-    end
-
     score = score_lower_section(roll)
     if score[:score] > best_score
       best_score = score[:score]
@@ -16,24 +10,6 @@ class YahtzeeScoring
     end
 
     { category: best_category, score: best_score }
-  end
-
-  def self.score_upper_section(roll)
-    best_category = nil
-    best_score = 0
-
-    (1..6).each do |num|
-      score = roll.count(num) * num
-      if score > best_score
-        best_score = score
-        best_category = num_to_category(num)
-      end
-    end
-    { category: best_category, score: best_score }
-  end
-
-  def self.num_to_category(num)
-    { 1 => :ones, 2 => :twos, 3 => :threes, 4 => :fours, 5 => :fives, 6 => :sixes }[num]
   end
 
   def self.score_lower_section(roll)
