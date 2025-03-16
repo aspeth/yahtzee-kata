@@ -17,12 +17,12 @@ class YahtzeeScoring
     best_score = 0
 
     categories = [
-      score_three_of_a_kind(roll),
-      score_four_of_a_kind(roll),
-      score_full_house(roll),
-      score_small_straight(roll),
-      score_large_straight(roll),
       score_yahtzee(roll),
+      score_large_straight(roll),
+      score_small_straight(roll),
+      score_full_house(roll),
+      score_four_of_a_kind(roll),
+      score_three_of_a_kind(roll),
       score_chance(roll)
     ]
 
