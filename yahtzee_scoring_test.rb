@@ -44,9 +44,9 @@ class TestYahtzeeScoring < Minitest::Test
     assert_equal({ category: :chance, score: 17 }, YahtzeeScoring.best_score([1, 2, 3, 5, 6]))
   end
 
-  # Test that the best scoring category is always selected
+  # Test that the best scoring category is always selected when a roll matches multiple categories
   def test_best_scoring_category_is_selected
-    # Yahtzee beats everything
+    # Yahtzee beats three or four of a kind
     assert_equal({ category: :yahtzee, score: 50 }, YahtzeeScoring.best_score([5, 5, 5, 5, 5]))
 
     # Large straight beats small straight
