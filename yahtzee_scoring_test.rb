@@ -55,37 +55,4 @@ class TestYahtzeeScoring < Minitest::Test
     # Full house beats three of a kind
     assert_equal({ category: :full_house, score: 25 }, YahtzeeScoring.best_score([2, 2, 4, 4, 4]))
   end
-
-  # I tried to write scenarios for each category but if we always return the highest scoring category,
-  # we never actually return anything from the upper section. In all these examples, `chance`
-  # is a higher scoring category because it includes all dice and not just the matching numbers.
-  # If I added another matching number to any example, `three_of_a_kind` would be the highest scoring category.
-
-  # This is an area where we could extend the funcitionality to allow the user to choose from any available category
-  # that matches the current roll. This aligns more with real-life Yahtzee play but is out of scope for this exercise.
-
-  # == Upper Section Tests ==
-  # def test_ones
-  #   assert_equal({ category: :ones, score: 2 }, YahtzeeScoring.best_score([1, 1, 2, 3, 5]))
-  # end
-
-  # def test_twos
-  #   assert_equal({ category: :twos, score: 4 }, YahtzeeScoring.best_score([2, 2, 5, 1, 3]))
-  # end
-
-  # def test_threes
-  #   assert_equal({ category: :threes, score: 6 }, YahtzeeScoring.best_score([3, 3, 5, 1, 2]))
-  # end
-
-  # def test_fours
-  #   assert_equal({ category: :fours, score: 8 }, YahtzeeScoring.best_score([4, 4, 5, 1, 2]))
-  # end
-
-  # def test_fives
-  #   assert_equal({ category: :fives, score: 10 }, YahtzeeScoring.best_score([5, 5, 6, 1, 2]))
-  # end
-
-  # def test_sixes
-  #   assert_equal({ category: :sixes, score: 12 }, YahtzeeScoring.best_score([6, 6, 5, 1, 2]))
-  # end
 end
